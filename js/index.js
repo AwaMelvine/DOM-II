@@ -6,16 +6,16 @@ funBusImg.addEventListener("mouseover", () => {
 });
 
 // load event
-window.addEventListener("load", () => {
-  const response = confirm(
-    "By using this site, you accept that we use cookies to improve on your experience on the site"
-  );
-  if (response) {
-    // code that uses cookies
-  } else {
-    // code that doesn't use cookies
-  }
-});
+// window.addEventListener("load", () => {
+//   const response = confirm(
+//     "By using this site, you accept that we use cookies to improve on your experience on the site"
+//   );
+//   if (response) {
+//     // code that uses cookies
+//   } else {
+//     // code that doesn't use cookies
+//   }
+// });
 
 // select
 const paragraphs = document.getElementsByTagName("p");
@@ -30,5 +30,13 @@ const paragraphs = document.getElementsByTagName("p");
     } else {
       // selected text does not have link to website in it
     }
+  });
+});
+
+// scroll event listener
+window.addEventListener("scroll", event => {
+  let images = document.getElementsByTagName("img");
+  [...images].splice(1).forEach(image => {
+    image.classList.toggle("site-space-background");
   });
 });
