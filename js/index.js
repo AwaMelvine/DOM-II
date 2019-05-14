@@ -1,4 +1,33 @@
+const paragraphs = document.getElementsByTagName("p");
+const funBusImg = document.querySelector(".intro img");
 const navLinks = document.querySelector("nav").childNodes;
+const siteImages = [...document.getElementsByTagName("img")].splice(1);
+const headings = document.querySelectorAll("h1, h2");
+const bgColors = [
+  "#ECFFF8",
+  "#EDFBC1",
+  "#F1F5F2",
+  "#DDFFD9",
+  "#EFEFD0",
+  "#F7C59F",
+  "#ECFFF8",
+  "#EDFBC1",
+  "#F1F5F2",
+  "#DDFFD9"
+];
+
+const textColors = [
+  "#4C5B5C",
+  "#040F0F",
+  "#29524A",
+  "#558564",
+  "#474A2C",
+  "#2B4162",
+  "#D90429",
+  "#FC814A",
+  "#A1674A",
+  "#A63A50"
+];
 
 navLinks.forEach(link => {
   link.addEventListener("click", e => {
@@ -7,8 +36,6 @@ navLinks.forEach(link => {
 });
 
 // mouseover event
-const funBusImg = document.querySelector(".intro img");
-
 funBusImg.addEventListener("mouseover", () => {
   funBusImg.classList.toggle("site-space-background");
 });
@@ -26,7 +53,6 @@ funBusImg.addEventListener("mouseover", () => {
 // });
 
 // copy event
-const paragraphs = document.getElementsByTagName("p");
 [...paragraphs].forEach(p => {
   p.addEventListener("copy", () => {
     const status = confirm(
@@ -41,7 +67,6 @@ const paragraphs = document.getElementsByTagName("p");
   });
 });
 
-let siteImages = [...document.getElementsByTagName("img")].splice(1);
 // scroll event listener
 window.addEventListener("scroll", event => {
   siteImages.forEach(image => {
@@ -50,7 +75,6 @@ window.addEventListener("scroll", event => {
 });
 
 // click event on headings
-const headings = document.querySelectorAll("h1, h2");
 [...headings].forEach(h => {
   h.addEventListener("click", () => {
     h.style.color = "pointer";
@@ -61,19 +85,7 @@ const headings = document.querySelectorAll("h1, h2");
 // dbclick event on document
 const body = document.querySelector("body");
 body.addEventListener("dblclick", event => {
-  const colors = [
-    "#ECFFF8",
-    "#EDFBC1",
-    "#F1F5F2",
-    "#DDFFD9",
-    "#EFEFD0",
-    "#F7C59F",
-    "#ECFFF8",
-    "#EDFBC1",
-    "#F1F5F2",
-    "#DDFFD9"
-  ];
-  body.style.background = colors[Math.floor(Math.random() * 10)];
+  body.style.background = bgColors[Math.floor(Math.random() * 10)];
 });
 
 // drag event listener
@@ -92,4 +104,12 @@ btn.addEventListener("click", event => {
 });
 dest.addEventListener("click", () => {
   alert("Thanks for reading");
+});
+
+// keydown event listener
+document.addEventListener("keydown", () => {
+  [...paragraphs].forEach(p => {
+    p.style.color = textColors[Math.floor(Math.random() * 10)];
+    console.log(textColors[Math.floor(Math.random() * 10)]);
+  });
 });
