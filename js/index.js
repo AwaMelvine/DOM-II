@@ -57,3 +57,21 @@ const headings = document.querySelectorAll("h1, h2");
     h.style.color = "#A63C06";
   });
 });
+
+// dbclick event on document
+const body = document.querySelector("body");
+body.addEventListener("dblclick", event => {
+  const colors = [
+    "#ECFFF8",
+    "#EDFBC1",
+    "#F1F5F2",
+    "#DDFFD9",
+    "#EFEFD0",
+    "#F7C59F",
+    "#ECFFF8",
+    "#EDFBC1",
+    "#F1F5F2",
+    "#DDFFD9"
+  ];
+  body.style.background = colors[Math.floor(Math.random() * 10)];
+});
