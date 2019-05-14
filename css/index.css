@@ -226,6 +226,17 @@ img {
   font-size: 1.6rem;
   padding: 20px;
 }
+.site-space-background {
+  animation: shrink 1s infinite alternate steps(60);
+}
+@keyframes shrink {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .home .intro {
   padding: 90px 0 10px;
   border-bottom: 2px dashed #C0C0C0;
