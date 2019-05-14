@@ -25,7 +25,7 @@ funBusImg.addEventListener("mouseover", () => {
 //   }
 // });
 
-// select
+// copy event
 const paragraphs = document.getElementsByTagName("p");
 [...paragraphs].forEach(p => {
   p.addEventListener("copy", () => {
@@ -45,6 +45,15 @@ const paragraphs = document.getElementsByTagName("p");
 window.addEventListener("scroll", event => {
   let images = document.getElementsByTagName("img");
   [...images].splice(1).forEach(image => {
-    image.classList.toggle("site-space-background");
+    image.classList.toggle("site-slow-background");
+  });
+});
+
+// click event on headings
+const headings = document.querySelectorAll("h1, h2");
+[...headings].forEach(h => {
+  h.addEventListener("click", () => {
+    h.style.color = "pointer";
+    h.style.color = "#A63C06";
   });
 });

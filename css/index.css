@@ -229,6 +229,9 @@ img {
 .site-space-background {
   animation: shrink 1s infinite alternate steps(60);
 }
+.site-slow-background {
+  animation: shrink 1s infinite alternate steps(60);
+}
 @keyframes shrink {
   0% {
     transform: scale(0.8);
