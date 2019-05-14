@@ -1,3 +1,11 @@
+const navLinks = document.querySelector("nav").childNodes;
+
+navLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+  });
+});
+
 // mouseover event
 const funBusImg = document.querySelector(".intro img");
 
