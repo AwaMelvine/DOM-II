@@ -41,10 +41,10 @@ const paragraphs = document.getElementsByTagName("p");
   });
 });
 
+let siteImages = [...document.getElementsByTagName("img")].splice(1);
 // scroll event listener
 window.addEventListener("scroll", event => {
-  let images = document.getElementsByTagName("img");
-  [...images].splice(1).forEach(image => {
+  siteImages.forEach(image => {
     image.classList.toggle("site-slow-background");
   });
 });
@@ -74,4 +74,10 @@ body.addEventListener("dblclick", event => {
     "#DDFFD9"
   ];
   body.style.background = colors[Math.floor(Math.random() * 10)];
+});
+
+siteImages.forEach(image => {
+  image.addEventListener("drag", e => {
+    e.target.style.display = "none";
+  });
 });
