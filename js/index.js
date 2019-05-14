@@ -76,8 +76,20 @@ body.addEventListener("dblclick", event => {
   body.style.background = colors[Math.floor(Math.random() * 10)];
 });
 
+// drag event listener
 siteImages.forEach(image => {
   image.addEventListener("drag", e => {
     e.target.style.display = "none";
   });
+});
+
+// stop event propagation
+const btn = document.querySelector(".btn");
+const dest = document.querySelector(".destination");
+btn.addEventListener("click", event => {
+  const email = prompt("Enter your email to sign up:");
+  event.stopImmediatePropagation();
+});
+dest.addEventListener("click", () => {
+  alert("Thanks for reading");
 });
