@@ -121,3 +121,8 @@ document.addEventListener("keydown", () => {
     p.style.opacity = "0";
   });
 });
+
+window.addEventListener("resize", () => {
+  document.querySelector("body").style.background =
+    bgColors[Math.floor(Math.random() * 10)];
+});
