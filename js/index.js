@@ -113,3 +113,11 @@ document.addEventListener("keydown", () => {
     console.log(textColors[Math.floor(Math.random() * 10)]);
   });
 });
+
+// cut event listener
+[...paragraphs].forEach(p => {
+  p.addEventListener("cut", () => {
+    p.style.transition = "all 1s ease-in-out";
+    p.style.opacity = "0";
+  });
+});
